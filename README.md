@@ -73,27 +73,15 @@ Regex-based detection for well-structured PII types (emails, phone numbers, URLs
 ```
 
 
+
 ## Kaggle Notebooks
 
-Key notebooks published on Kaggle ([illidan7](https://www.kaggle.com/illidan7)):
+Published notebooks on Kaggle ([illidan7](https://www.kaggle.com/illidan7)):
 
 - [PII-Detect-Mistral-PII-Generation](https://www.kaggle.com/code/illidan7/pii-detect-mistral-pii-generation) (14 upvotes)
 - [PII-Detect-Mistral-Dataset-Generation](https://www.kaggle.com/code/illidan7/pii-detect-mistral-dataset-generation) (2 upvotes)
 - [Public-Model-Ensemble [Pub: 0.970; Priv: 0.956]](https://www.kaggle.com/code/illidan7/public-model-ensemble-pub-0-970-priv-0-956) (2 upvotes)
-- [Deberta3base Inference - TOA](https://www.kaggle.com/code/illidan7/deberta3base-inference-toa)
-- [Deberta3base Train - TOA](https://www.kaggle.com/code/illidan7/deberta3base-train-toa)
-- [Deberta3base Training - valentin](https://www.kaggle.com/code/illidan7/deberta3base-training-valentin)
-- [PII-Detect-Data-Exploration](https://www.kaggle.com/code/illidan7/pii-detect-data-exploration)
-- [PII-Detect - Deberta3base Inference](https://www.kaggle.com/code/illidan7/pii-detect-deberta3base-inference)
-- [PII-Detect-Ensemble-Inference-Lavrikov](https://www.kaggle.com/code/illidan7/pii-detect-ensemble-inference-lavrikov)
-- [PII-detect-Ensemble-Inference](https://www.kaggle.com/code/illidan7/pii-detect-ensemble-inference)
-- [PII-Detect-Lavri+Slice-Inference](https://www.kaggle.com/code/illidan7/pii-detect-lavri-slice-inference)
-- [PII-Detect-Lavri+Slice-ONNX-Inference](https://www.kaggle.com/code/illidan7/pii-detect-lavri-slice-onnx-inference)
-- [PII-Detect-LLM-Data-Generation](https://www.kaggle.com/code/illidan7/pii-detect-llm-data-generation)
-- [PII-Detect-Mistral7b-Data-Generation](https://www.kaggle.com/code/illidan7/pii-detect-mistral7b-data-generation)
-- [PII-Detect-Mistral7b-Dataset-Generation](https://www.kaggle.com/code/illidan7/pii-detect-mistral7b-dataset-generation)
 
-*Plus 4 more notebooks — see [full profile](https://www.kaggle.com/illidan7/code)*
 ## Tech Stack
 
 - **Models**: DeBERTa-v3-base, DeBERTa-v3-large (HuggingFace Transformers)
