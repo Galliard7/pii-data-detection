@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.whl
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_output/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (too large for git)
+*.csv
+*.json
+*.parquet
+*.pkl
+*.h5
+*.pt
+*.bin
+*.onnx
+
+# Kaggle
+kaggle.json
+
+# Weights & Biases
+wandb/
