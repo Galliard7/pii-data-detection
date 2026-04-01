@@ -1,5 +1,7 @@
 # PII Data Detection — Kaggle Competition
 
+![Competition Header](assets/header.png)
+
 ## Overview
 
 The [PII Data Detection](https://www.kaggle.com/competitions/pii-detection-removal-from-educational-data) competition (2024) challenged participants to identify and classify Personally Identifiable Information (PII) in student essays. The task was token-level Named Entity Recognition (NER) with 7 PII entity types: `NAME_STUDENT`, `EMAIL`, `USERNAME`, `ID_NUM`, `PHONE_NUM`, `URL_PERSONAL`, and `STREET_ADDRESS`.
@@ -45,6 +47,32 @@ Evolved through several ensemble approaches:
 ### 5. Postprocessing
 
 Regex-based detection for well-structured PII types (emails, phone numbers, URLs, street addresses) as a safety net alongside DeBERTa predictions.
+
+## Results
+
+| Model | Public LB | Private LB | Notes |
+|---|---|---|---|
+| DeBERTa-v3-base (baseline) | 0.915 | — | Valentin Werner's public baseline |
+| + synthetic data | — | — | 3,000+ Mistral-generated essays |
+| + truncation=False | +0.02 | — | Key insight: full doc > sliding window |
+| Weighted softmax ensemble | — | — | 67 iterations of weight tuning |
+| Slice ensemble | — | — | Per-PII-type specialist models |
+| **Final ONNX ensemble** | **0.970** | **0.956** | 8-9 models, BFloat16 quantization |
+
+## Architecture
+
+```mermaid
+graph LR
+    A[Student Essays] --> B[Synthetic Data Pipeline<br>Mistral 7B + Faker<br>3000+ essays]
+    B --> C[SpaCy Tokenization<br>BIO Label Alignment]
+    C --> D1[DeBERTa-v3-base]
+    C --> D2[DeBERTa-v3-large]
+    D1 --> E[ONNX Conversion<br>BFloat16]
+    D2 --> E
+    E --> F[Slice Ensemble<br>Per-entity specialists]
+    F --> G[Regex Postprocessing<br>email/phone/URL/address]
+    G --> H[Final Predictions<br>Pub 0.970 / Priv 0.956]
+```
 
 ## Repository Structure
 
