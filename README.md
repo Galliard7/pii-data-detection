@@ -63,15 +63,15 @@ Regex-based detection for well-structured PII types (emails, phone numbers, URLs
 
 ```mermaid
 graph LR
-    A[Student Essays] --> B[Synthetic Data Pipeline<br>Mistral 7B + Faker<br>3000+ essays]
-    B --> C[SpaCy Tokenization<br>BIO Label Alignment]
-    C --> D1[DeBERTa-v3-base]
-    C --> D2[DeBERTa-v3-large]
-    D1 --> E[ONNX Conversion<br>BFloat16]
+    A["Student Essays"] --> B["Synthetic Data Pipeline<br>Mistral 7B + Faker<br>3000+ essays"]
+    B --> C["SpaCy Tokenization<br>BIO Label Alignment"]
+    C --> D1["DeBERTa-v3-base"]
+    C --> D2["DeBERTa-v3-large"]
+    D1 --> E["ONNX Conversion<br>BFloat16"]
     D2 --> E
-    E --> F[Slice Ensemble<br>Per-entity specialists]
-    F --> G[Regex Postprocessing<br>email/phone/URL/address]
-    G --> H[Final Predictions<br>Pub 0.970 / Priv 0.956]
+    E --> F["Slice Ensemble<br>Per-entity specialists"]
+    F --> G["Regex Postprocessing<br>email/phone/URL/address"]
+    G --> H["Final Predictions<br>Pub 0.970 / Priv 0.956"]
 ```
 
 ## Repository Structure
